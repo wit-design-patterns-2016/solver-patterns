@@ -2,6 +2,7 @@ package xstrategysam
 
 import static org.junit.Assert.*
 import org.junit.Test
+import xstrategy.Algorithms
 
 class MinimaSolverTest
 {
@@ -31,6 +32,17 @@ class MinimaSolverTest
   {
     solver = new MinimaSolver (new Bisection)
     val result = solver.minima(line)
+    assertTrue(result.get(0) == 5.5)
+    assertTrue(result.get(1) == 6.6)
+  }
+  
+  @Test
+  def SAM()
+  { 
+    val algorithms = new Algorithms()
+    
+    solver = new MinimaSolver (algorithms.bisection);
+    val result = solver.minima(line);
     assertTrue(result.get(0) == 5.5)
     assertTrue(result.get(1) == 6.6)
   }
